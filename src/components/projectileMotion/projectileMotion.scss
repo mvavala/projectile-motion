@@ -1,0 +1,20 @@
+.draw-container {
+    background-color: #bdbdbd;
+    height: calc(100vh);
+
+    .input-parent {
+        display: flex;
+        justify-content: center;
+    }
+
+    .input-container {
+        display: flex;
+        flex-direction: column;
+        width: min-content;
+        margin-right: 2rem;
+    }
+
+    canvas {
+        cursor: pointer;
+    }
+}
