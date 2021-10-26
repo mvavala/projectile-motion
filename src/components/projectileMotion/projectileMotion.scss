@@ -1,6 +1,5 @@
 .draw-container {
-    background-color: #bdbdbd;
-    height: calc(100vh);
+    text-align: center;
 
     .input-parent {
         display: flex;
@@ -16,5 +15,11 @@
 
     canvas {
         cursor: pointer;
+        width: 55%;
+        padding-bottom: 2rem;
+
+        @media (max-width: 736px) {
+            width: 98%;
+        }
     }
 }

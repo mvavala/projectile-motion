@@ -13,8 +13,8 @@ const ProjectileMotion = () => {
     let applyDrag = false;
     let pathMap = new Map();
     let projectileRadius = 5;
-    const gridSizeY = 500;
-    const gridSizeX = 800;
+    const gridSizeY = 700;
+    const gridSizeX = 1200;
     const ballColor = 'blue';
     const dpr = 3;
     let mass = 1000;
@@ -31,6 +31,7 @@ const ProjectileMotion = () => {
         let canvasContext = canvas.getContext('2d');
         canvasContext.save();
         canvasContext.scale(dpr, dpr);
+        canvasContext.font = '0.9rem Arial';
         canvasContext.clearRect(0, 0, gridSizeX, gridSizeY);
         canvasContext.beginPath();
         canvasContext.strokeStyle = 'black';
@@ -99,15 +100,15 @@ const ProjectileMotion = () => {
         canvasContext.closePath();
         canvasContext.beginPath();
         canvasContext.translate(x, y);
-        canvasContext.fillText(`y-speed: ${ySpeed.toFixed(3)} m/s`, -10, -55);
-        canvasContext.fillText(`x-speed: ${xSpeed.toFixed(3)} m/s`, -10, -45);
-        canvasContext.fillText(`x: ${x.toFixed(3)} m`, -10, -35);
+        canvasContext.fillText(`y-speed: ${ySpeed.toFixed(3)} m/s`, -10, -70);
+        canvasContext.fillText(`x-speed: ${xSpeed.toFixed(3)} m/s`, -10, -55);
+        canvasContext.fillText(`x: ${x.toFixed(3)} m`, -10, -40);
         canvasContext.fillText(
             `y: ${(gridSizeY - y - radius).toFixed(3)} m`,
             -10,
             -25,
         );
-        canvasContext.fillText(`t: ${time.toFixed(3)} s`, -10, -15);
+        canvasContext.fillText(`t: ${time.toFixed(3)} s`, -10, -10);
         canvasContext.translate(-x, -y);
         canvasContext.translate(x, y);
         canvasContext.rotate(velocityAngle + 90 * (Math.PI / 180));
@@ -354,11 +355,6 @@ const ProjectileMotion = () => {
                     id='my-canvas-projectile'
                     height={gridSizeY * dpr}
                     width={gridSizeX * dpr}
-                    style={{
-                        height: '30%',
-                        width: '50%',
-                        // marginBottom: '100px',
-                    }}
                     onClick={handleCanvasClick}
                 />
             </div>
