@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/projectile-motion/static/css/main.ca589552.chunk.css",
-    "main.js": "/projectile-motion/static/js/main.4b468575.chunk.js",
-    "main.js.map": "/projectile-motion/static/js/main.4b468575.chunk.js.map",
+    "main.css": "/projectile-motion/static/css/main.4f883ddc.chunk.css",
+    "main.js": "/projectile-motion/static/js/main.88c5a8e3.chunk.js",
+    "main.js.map": "/projectile-motion/static/js/main.88c5a8e3.chunk.js.map",
     "runtime-main.js": "/projectile-motion/static/js/runtime-main.24be2491.js",
     "runtime-main.js.map": "/projectile-motion/static/js/runtime-main.24be2491.js.map",
     "static/js/2.918072dd.chunk.js": "/projectile-motion/static/js/2.918072dd.chunk.js",
@@ -10,14 +10,13 @@
     "static/js/3.cb8a6f4a.chunk.js": "/projectile-motion/static/js/3.cb8a6f4a.chunk.js",
     "static/js/3.cb8a6f4a.chunk.js.map": "/projectile-motion/static/js/3.cb8a6f4a.chunk.js.map",
     "index.html": "/projectile-motion/index.html",
-    "static/css/main.ca589552.chunk.css.map": "/projectile-motion/static/css/main.ca589552.chunk.css.map",
-    "static/js/2.918072dd.chunk.js.LICENSE.txt": "/projectile-motion/static/js/2.918072dd.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/projectile-motion/static/media/logo.6ce24c58.svg"
+    "static/css/main.4f883ddc.chunk.css.map": "/projectile-motion/static/css/main.4f883ddc.chunk.css.map",
+    "static/js/2.918072dd.chunk.js.LICENSE.txt": "/projectile-motion/static/js/2.918072dd.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.24be2491.js",
     "static/js/2.918072dd.chunk.js",
-    "static/css/main.ca589552.chunk.css",
-    "static/js/main.4b468575.chunk.js"
+    "static/css/main.4f883ddc.chunk.css",
+    "static/js/main.88c5a8e3.chunk.js"
   ]
 }
