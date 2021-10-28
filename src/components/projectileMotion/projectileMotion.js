@@ -3,7 +3,7 @@ import InputField from './inputField';
 import { inputDragMap, inputMap } from './inputMap';
 import './projectileMotion.scss';
 
-const ProjectileMotion = () => {
+const ProjectileMotion = (props) => {
     useEffect(() => {
         buildGrid();
     }, []);
@@ -28,34 +28,36 @@ const ProjectileMotion = () => {
 
     const buildGrid = () => {
         let canvas = document.getElementById('my-canvas-projectile');
-        let canvasContext = canvas.getContext('2d');
-        canvasContext.save();
-        canvasContext.scale(dpr, dpr);
-        canvasContext.font = '0.9rem Arial';
-        canvasContext.clearRect(0, 0, gridSizeX, gridSizeY);
-        canvasContext.beginPath();
-        canvasContext.strokeStyle = 'black';
-        canvasContext.strokeRect(0, 0, gridSizeX, gridSizeY);
-        canvasContext.fillStyle = 'white';
-        canvasContext.fillRect(1, 1, gridSizeX - 2, gridSizeY - 2);
-        canvasContext.closePath();
-        generateYAxis();
-        generateXAxis();
-        drawPath();
-        projectileList.forEach((proj) => {
-            generateCanvasPrjojectile(
-                proj.xMovement,
-                proj.yMovement,
-                proj.radius,
-                ballColor,
-                proj.xSpeed,
-                proj.ySpeed,
-                proj.timeToImpact,
-                proj.velocityAngle,
-                proj.velocity,
-            );
-        });
-        canvasContext.restore();
+        if (canvas) {
+            let canvasContext = canvas.getContext('2d');
+            canvasContext.save();
+            canvasContext.scale(dpr, dpr);
+            canvasContext.font = '0.9rem Arial';
+            canvasContext.clearRect(0, 0, gridSizeX, gridSizeY);
+            canvasContext.beginPath();
+            canvasContext.strokeStyle = 'black';
+            canvasContext.strokeRect(0, 0, gridSizeX, gridSizeY);
+            canvasContext.fillStyle = 'white';
+            canvasContext.fillRect(1, 1, gridSizeX - 2, gridSizeY - 2);
+            canvasContext.closePath();
+            generateYAxis();
+            generateXAxis();
+            drawPath();
+            projectileList.forEach((proj) => {
+                generateCanvasPrjojectile(
+                    proj.xMovement,
+                    proj.yMovement,
+                    proj.radius,
+                    ballColor,
+                    proj.xSpeed,
+                    proj.ySpeed,
+                    proj.timeToImpact,
+                    proj.velocityAngle,
+                    proj.velocity,
+                );
+            });
+            canvasContext.restore();
+        }
     };
 
     const drawPath = () => {
@@ -173,6 +175,24 @@ const ProjectileMotion = () => {
         }
     };
 
+    const renderWinnerOverlay = () => {
+        let secToGame = 5;
+        const winnerOverlay = document.createElement('div');
+        winnerOverlay.innerHTML =
+            '<h1>Winner! Starting mini game in 5 seconds</h1>';
+        winnerOverlay.className = 'winner-overlay';
+        document.querySelector('#root').appendChild(winnerOverlay);
+        const interval = setInterval(() => {
+            secToGame--;
+            winnerOverlay.innerHTML = `<h1>Winner! Starting mini game in ${secToGame} seconds</h1>`;
+        }, 1000);
+        setTimeout(() => {
+            clearInterval(interval);
+            winnerOverlay && winnerOverlay.remove();
+            props.setRenderGame(true);
+        }, 5000);
+    };
+
     const startInterval = () => {
         renderInterval = setInterval(() => {
             if (document.getElementById('my-canvas-projectile')) {
@@ -182,6 +202,14 @@ const ProjectileMotion = () => {
                         proj.start === false
                     ) {
                         proj.yMovement = gridSizeY - proj.radius;
+                        if (
+                            Math.round(proj.xMovement) === 777 &&
+                            angle !== 0 &&
+                            Math.abs(angle) !== 90 &&
+                            fireVelocity > 10
+                        ) {
+                            renderWinnerOverlay();
+                        }
                         proj.bottom = true;
                     } else {
                         if (proj.yMovement < gridSizeY - proj.radius) {

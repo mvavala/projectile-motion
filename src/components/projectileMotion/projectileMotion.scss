@@ -23,3 +23,34 @@
         }
     }
 }
+
+.winner-overlay {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    h1 {
+        color: black;
+        opacity: 1;
+        z-index: 100;
+    }
+}
+
+.winner-overlay::before {
+    content: '';
+    position: fixed;
+    background-image: url('./confetti.gif');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.5;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}

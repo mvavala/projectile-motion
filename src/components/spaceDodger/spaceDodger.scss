@@ -1,0 +1,107 @@
+#my-canvas-obj {
+    background-color: black;
+}
+
+#canvas-overlay {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    h3 {
+        color: white;
+        position: relative;
+        z-index: 10;
+    }
+
+    button {
+        position: relative;
+        z-index: 10;
+        border-radius: 4px;
+        padding: 5px 10px;
+        outline: 0;
+        background-color: white;
+        border: none;
+
+        &:hover {
+            cursor: pointer;
+            background-color: lightgrey;
+            color: white;
+        }
+    }
+}
+
+@keyframes fadeinback {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.6;
+    }
+}
+
+#canvas-overlay::after {
+    content: '';
+    background-image: url('./laugh.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    animation: fadeinback 1.5s;
+    opacity: 0.6;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+}
+
+#draw-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    outline: 0;
+
+    .move-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+}
+
+#canvas-overlay,
+#start-overlay {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    button {
+        border: none;
+        outline: 0;
+        border-radius: 4px;
+        padding: 5px 10px;
+
+        &:hover {
+            cursor: pointer;
+            background-color: green;
+            color: white;
+        }
+    }
+}
+
+#start-overlay {
+    flex-direction: column;
+
+    .instruction-section {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        margin-bottom: 0.5rem;
+
+        h3 {
+            text-align: center;
+            margin-bottom: 2px;
+        }
+    }
+}
