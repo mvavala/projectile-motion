@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/projectile-motion/static/css/main.6b725788.chunk.css",
-    "main.js": "/projectile-motion/static/js/main.3496fe7a.chunk.js",
-    "main.js.map": "/projectile-motion/static/js/main.3496fe7a.chunk.js.map",
+    "main.css": "/projectile-motion/static/css/main.f7a7f78d.chunk.css",
+    "main.js": "/projectile-motion/static/js/main.0869307e.chunk.js",
+    "main.js.map": "/projectile-motion/static/js/main.0869307e.chunk.js.map",
     "runtime-main.js": "/projectile-motion/static/js/runtime-main.6c8127a0.js",
     "runtime-main.js.map": "/projectile-motion/static/js/runtime-main.6c8127a0.js.map",
     "static/js/2.74344f05.chunk.js": "/projectile-motion/static/js/2.74344f05.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.171cfb2a.chunk.js": "/projectile-motion/static/js/3.171cfb2a.chunk.js",
     "static/js/3.171cfb2a.chunk.js.map": "/projectile-motion/static/js/3.171cfb2a.chunk.js.map",
     "index.html": "/projectile-motion/index.html",
-    "static/css/main.6b725788.chunk.css.map": "/projectile-motion/static/css/main.6b725788.chunk.css.map",
+    "static/css/main.f7a7f78d.chunk.css.map": "/projectile-motion/static/css/main.f7a7f78d.chunk.css.map",
     "static/js/2.74344f05.chunk.js.LICENSE.txt": "/projectile-motion/static/js/2.74344f05.chunk.js.LICENSE.txt",
     "static/media/projectileMotion.scss": "/projectile-motion/static/media/confetti.a2694fd4.gif",
     "static/media/spaceDodger.scss": "/projectile-motion/static/media/laugh.3e7d0afc.gif"
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.6c8127a0.js",
     "static/js/2.74344f05.chunk.js",
-    "static/css/main.6b725788.chunk.css",
-    "static/js/main.3496fe7a.chunk.js"
+    "static/css/main.f7a7f78d.chunk.css",
+    "static/js/main.0869307e.chunk.js"
   ]
 }
