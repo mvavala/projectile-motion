@@ -43,6 +43,16 @@ const ProjectileMotion = (props) => {
             generateYAxis();
             generateXAxis();
             drawPath();
+            canvasContext.beginPath();
+            canvasContext.textAlign = 'center';
+            canvasContext.fillStyle = 'black';
+            canvasContext.fillText(
+                'Click to fire projectile',
+                gridSizeX / 2,
+                gridSizeY / 2,
+            );
+            canvasContext.textAlign = 'start';
+            canvasContext.closePath();
             projectileList.forEach((proj) => {
                 generateCanvasPrjojectile(
                     proj.xMovement,
@@ -95,6 +105,7 @@ const ProjectileMotion = (props) => {
         let canvasContext = canvas.getContext('2d');
         canvasContext.beginPath();
         canvasContext.strokeStyle = color;
+        canvasContext.fillStyle = color;
         canvasContext.arc(x, y, radius, 0, 2 * Math.PI);
         canvasContext.fill();
         canvasContext.fillStyle = '#000000';

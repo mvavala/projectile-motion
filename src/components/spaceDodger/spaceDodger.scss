@@ -1,5 +1,10 @@
 #my-canvas-obj {
     background-color: black;
+    width: 60%;
+
+    @media (max-width: 736px) {
+        width: 100%;
+    }
 }
 
 #canvas-overlay {
@@ -64,6 +69,7 @@
 
     .move-container {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         color: white;
@@ -102,6 +108,51 @@
         h3 {
             text-align: center;
             margin-bottom: 2px;
+        }
+    }
+}
+
+.mobile-arrow-section {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 3rem;
+    display: none;
+
+    @media (max-width: 736px) {
+        display: flex;
+    }
+
+    button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 0.25rem;
+        padding: 0.5rem;
+    }
+    .up {
+        margin-bottom: 0.25rem;
+
+        .up-btn {
+            svg {
+                transform: rotate(-90deg);
+            }
+        }
+    }
+    .bottom-keys {
+        display: flex;
+        button {
+            &.down {
+                svg {
+                    transform: rotate(90deg);
+                }
+            }
+            &.left {
+                svg {
+                    transform: rotate(180deg);
+                }
+            }
         }
     }
 }

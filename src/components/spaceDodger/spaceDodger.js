@@ -25,6 +25,22 @@ const SpaceDodger = () => {
         buildGrid();
     }, []);
 
+    const arrowSvg = (
+        <svg
+            width='16'
+            height='16'
+            viewBox='0 0 16 16'
+            fill='none'
+            xmlns='http://www.w3.org/2000/svg'
+        >
+            <path
+                d='M7.75 1.86994L13.13 7.24994L9.46836e-08 7.24994L7.67962e-08 8.74994L13.13 8.74994L7.75 14.1299L8.81 15.1899L16 7.99994L8.81 0.809939L7.75 1.86994Z'
+                fill='#000000'
+                stroke='#000000'
+            />
+        </svg>
+    );
+
     if (starList.length === 0) {
         for (let i = 0; i < 30; i++) {
             let x = Math.floor(Math.random() * gridSizeX);
@@ -268,6 +284,15 @@ const SpaceDodger = () => {
         removeFromKeySet(e.key);
     };
 
+    const handleArrowPress = (direction, remove) => {
+        let event = { key: direction, preventDefault: () => {} };
+        if (remove) {
+            handleKeyUp(event);
+        } else {
+            handleKeyDown(event);
+        }
+    };
+
     window.onresize = () => {
         if (document.getElementById('canvas-overlay')) {
             let overlay = document.getElementById('canvas-overlay');
@@ -327,11 +352,44 @@ const SpaceDodger = () => {
                 <canvas
                     className='canvas'
                     id='my-canvas-obj'
-                    style={{ height: '40%', width: '60%' }}
                     height={gridSizeY * dpr}
                     width={gridSizeX * dpr}
                 />
             </div>
+            <section className='mobile-arrow-section'>
+                <section className='up'>
+                    <button
+                        className='up-btn'
+                        onMouseDown={() => handleArrowPress('arrowUp')}
+                        onMouseUp={() => handleArrowPress('arrowUp', true)}
+                    >
+                        {arrowSvg}
+                    </button>
+                </section>
+                <section className='bottom-keys'>
+                    <button
+                        className='left'
+                        onMouseDown={() => handleArrowPress('arrowLeft')}
+                        onMouseUp={() => handleArrowPress('arrowLeft', true)}
+                    >
+                        {arrowSvg}
+                    </button>
+                    <button
+                        className='down'
+                        onMouseDown={() => handleArrowPress('arrowDown')}
+                        onMouseUp={() => handleArrowPress('arrowDown', true)}
+                    >
+                        {arrowSvg}
+                    </button>
+                    <button
+                        className='right'
+                        onMouseDown={() => handleArrowPress('arrowRight')}
+                        onMouseUp={() => handleArrowPress('arrowRight', true)}
+                    >
+                        {arrowSvg}
+                    </button>
+                </section>
+            </section>
         </div>
     );
 };
