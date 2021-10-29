@@ -219,6 +219,7 @@ const ProjectileMotion = (props) => {
                             Math.abs(angle) !== 90 &&
                             fireVelocity > 10
                         ) {
+                            clearInterval(renderInterval);
                             renderWinnerOverlay();
                         }
                         proj.bottom = true;
@@ -355,6 +356,7 @@ const ProjectileMotion = (props) => {
                                 defaultValue={obj.defaultValue}
                                 label={obj.label}
                                 handleChange={handleInputChange}
+                                fireProjectile={handleCanvasClick}
                             />
                         );
                     })}
@@ -383,6 +385,7 @@ const ProjectileMotion = (props) => {
                                 defaultValue={obj.defaultValue}
                                 label={obj.label}
                                 handleChange={handleInputChange}
+                                fireProjectile={handleCanvasClick}
                             />
                         );
                     })}

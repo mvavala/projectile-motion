@@ -13,6 +13,11 @@ const InputField = (props) => {
                 placeholder={props.placeholder}
                 defaultValue={props.defaultValue}
                 onChange={(e) => props.handleChange(e.target)}
+                onKeyPress={(e) => {
+                    if (e.key.toLowerCase() === 'enter') {
+                        props.fireProjectile();
+                    }
+                }}
             ></input>
         </div>
     );
